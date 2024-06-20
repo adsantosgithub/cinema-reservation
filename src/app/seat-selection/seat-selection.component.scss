@@ -1,0 +1,30 @@
+.seat-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+button {
+    margin: 2px;
+    width: 70px;    
+    height: 70px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Horizontally center the button */
+    align-items: center; /* Vertically center the button, if needed */
+  }
+
+.available {
+    background-color: green;
+}
+
+.selected {
+    background-color: yellow;
+}
+
+.reserved {
+    background-color: red;
+    cursor: not-allowed;
+}

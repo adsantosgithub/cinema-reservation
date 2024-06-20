@@ -1,0 +1,15 @@
+<div class="reservation-summary">
+    <h2>Reservation Summary</h2>
+    <div>
+        <p><strong>Movie Title:</strong> {{ movieTitle }}</p>
+        <p><strong>Showtime:</strong> {{ showtime }}</p>
+        <strong>Selected Seats:</strong> 
+            <ul>
+                <li *ngFor="let seat of selectedSeats">{{ seat.id }}</li>
+            </ul>
+    </div>
+    <div class="actions">
+        <button (click)="confirm()" style="margin-right: 20px;">Confirm Reservation</button>
+        <button (click)="editSelection()">Edit Selection</button>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="movies-container" *ngFor="let movie of movies">
+    <h2 class="movie-title">{{ movie.title }}</h2>
+    <img src="{{posterUrl}}" alt="Movie Poster">
+    <p class="showtimes-label">Showtimes:</p>
+    <div class="showtimes-buttons">
+        <button class="showtime-button" *ngFor="let time of movie.showtimes" (click)="selectShowtime(movie, time)">
+            {{ time }}
+        </button>
+    </div>
+</div>

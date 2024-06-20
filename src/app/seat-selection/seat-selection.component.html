@@ -1,0 +1,9 @@
+<div *ngFor="let row of rows; let rowIndex = index" class="seat-row">
+    <button *ngFor="let seat of row" [ngClass]="seat.state" (click)="toggleSeatSelection(seat)">
+      {{ seat.id }}
+    </button>
+</div>
+<div class="button-container">
+    <button (click)="navigateToSummary()" style="margin-right: 20px;">Go to Summary</button>
+    <button (click)="editShowtime()">Choose another showtime</button>
+</div>

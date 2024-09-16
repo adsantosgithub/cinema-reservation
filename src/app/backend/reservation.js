@@ -5,7 +5,6 @@ const mysql = require('mysql');
 const cors = require('cors');
 
 // Initialize the Express application
-
 const app = express();
 const port = 3000; // Port where the server will listen
 

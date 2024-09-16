@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../services/movie.service';
 import { Movie } from '../model/movie';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-movies-list',
@@ -13,7 +12,7 @@ export class MoviesListComponent implements OnInit {
   movies: Movie[] = [];
   posterUrl: string = '';
 
-  constructor(private movieService: MovieService, private router: Router, private authService: AuthService) { }
+  constructor(private movieService: MovieService, private router: Router) { }
 
   ngOnInit(): void {
     //this.movies = this.movieService.getMovies();
@@ -34,11 +33,9 @@ export class MoviesListComponent implements OnInit {
   }
 
   selectShowtime(movie: Movie, time: string): void {
-
-    if(this.authService.verifyMovieAndShowTime(movie.title, time)) {
-      // Navigate to seat-selection component with selected movie and showtime
-      // This could involve using Angular Router and passing data via route parameters or a shared service
-      this.router.navigate(['/seat-selection', movie.title, time]);
-    }
+    // Navigate to seat-selection component with selected movie and showtime
+     // This could involve using Angular Router and passing data via route parameters or a shared service
+    this.router.navigate(['/seat-selection', movie.title, time]);
+   
   }
 }
